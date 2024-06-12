@@ -1,0 +1,258 @@
+\doxysection{Referência ao ficheiro C\+:/\+EDA/\+EDA\+\_\+\+Fase2/\+Funcoes\+\_\+\+LIB/carrega\+Grafo.c}
+\label{carrega_grafo_8c}\index{C:/EDA/EDA\_Fase2/Funcoes\_LIB/carregaGrafo.c@{C:/EDA/EDA\_Fase2/Funcoes\_LIB/carregaGrafo.c}}
+{\ttfamily \#include "{}header.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ Load\+Graph} (\textbf{ Vertice} $\ast$h, const char $\ast$file\+Name, bool $\ast$res)
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ Load\+Graph\+BIN} (\textbf{ Vertice} $\ast$h, char $\ast$file\+Name, bool $\ast$res)
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ Load\+Adj\+BIN} (\textbf{ Vertice} $\ast$g, bool $\ast$res)
+\begin{DoxyCompactList}\small\item\em Load de Adjacencias de um Grafo. \end{DoxyCompactList}\item 
+int \textbf{ Save\+Graph\+BIN} (\textbf{ Vertice} $\ast$h, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Grava Grafo em ficheiro binario. \end{DoxyCompactList}\item 
+int \textbf{ Save\+Adj\+BIN} (\textbf{ Adj} $\ast$h, char $\ast$file\+Name, int cod\+Vertice\+Origem)
+\begin{DoxyCompactList}\small\item\em Gravar \doxyref{Adj}{p. }{struct_adj} em ficheiro binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Libraria \begin{DoxyAuthor}{Autor}
+Antonio Ferreira -\/ N� 9657 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+Maio 2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentação das funções}
+\label{carrega_grafo_8c_afb3f3bb298ec1b5d629f123dead27f6f} 
+\index{carregaGrafo.c@{carregaGrafo.c}!LoadAdjBIN@{LoadAdjBIN}}
+\index{LoadAdjBIN@{LoadAdjBIN}!carregaGrafo.c@{carregaGrafo.c}}
+\doxysubsubsection{LoadAdjBIN()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Load\+Adj\+BIN (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g,  }\item[{bool $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+
+Load de Adjacencias de um Grafo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em g} & \\
+\hline
+{\em file\+Name} & \\
+\hline
+{\em res} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ *res\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00093\ \ \ \ \ FILE*\ fp;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (g\ ==\ NULL)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00095\ \ \ \ \ AdjFile\ aux;}
+\DoxyCodeLine{00096\ \ \ \ \ Vertice*\ auxGraph\ =\ g;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{while}\ (auxGraph)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ fp\ =\ fopen(auxGraph-\/>nome,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fp\ !=\ NULL)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&aux,\ 1,\ \textcolor{keyword}{sizeof}(AdjFile),\ fp))\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g\ =\ InsereAdjacenteVerticeCod(g,\ aux.codOrigem,\ aux.codDestino,\ aux.weight,\ res);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ fclose(fp);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ auxGraph\ =\ auxGraph-\/>next;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00108\ \}}
+
+\end{DoxyCode}
+\label{carrega_grafo_8c_ae142bfc3b5afbb6b30889769857f3425} 
+\index{carregaGrafo.c@{carregaGrafo.c}!LoadGraph@{LoadGraph}}
+\index{LoadGraph@{LoadGraph}!carregaGrafo.c@{carregaGrafo.c}}
+\doxysubsubsection{LoadGraph()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Load\+Graph (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{h,  }\item[{const char $\ast$}]{file\+Name,  }\item[{bool $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ *res\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ \ \ \ \ FILE*\ fp\ =\ fopen(fileName,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (fp\ ==\ NULL)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Failed\ to\ open\ file"{}});}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ line[256];}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(line,\ \textcolor{keyword}{sizeof}(line),\ fp))\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ token\ =\ strtok(line,\ \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\ ==\ NULL)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cod\ =\ atoi(token);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ token\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\ ==\ NULL)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ nome[MAX\_NAME\_LENGTH];}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ strncpy(nome,\ token,\ MAX\_NAME\_LENGTH\ -\/\ 1);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ nome[MAX\_NAME\_LENGTH\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Vertice*\ novo\ =\ createVertice(cod,\ nome);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ h\ =\ InsereVertice(h,\ novo,\ res);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ token\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (token\ !=\ NULL)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ adjToken\ =\ strtok(token,\ \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjToken\ ==\ NULL)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ adjCod\ =\ atoi(adjToken);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ adjToken\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (adjToken\ ==\ NULL)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dist\ =\ atof(adjToken);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ Adj*\ adj\ =\ createAdj(adjCod,\ dist);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ addAdj(novo,\ adj);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ token\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ fclose(fp);}
+\DoxyCodeLine{00063\ \ \ \ \ *res\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}
+\label{carrega_grafo_8c_a16ef54fd81a7da11eef3eaf91b4c5b1e} 
+\index{carregaGrafo.c@{carregaGrafo.c}!LoadGraphBIN@{LoadGraphBIN}}
+\index{LoadGraphBIN@{LoadGraphBIN}!carregaGrafo.c@{carregaGrafo.c}}
+\doxysubsubsection{LoadGraphBIN()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Load\+Graph\+BIN (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{h,  }\item[{char $\ast$}]{file\+Name,  }\item[{bool $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ *res\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00069\ \ \ \ \ FILE*\ fp\ =\ fopen(fileName,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (fp\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ VerticeFile\ aux;}
+\DoxyCodeLine{00073\ \ \ \ \ Vertice*\ novo;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{while}\ (fread(\&aux,\ 1,\ \textcolor{keyword}{sizeof}(VerticeFile),\ fp))\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ novo\ =\ createVertice(aux.cod,\ aux.nome);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ h\ =\ InsereVertice(h,\ novo,\ res);}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ fclose(fp);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+\label{carrega_grafo_8c_a75b4519b3c71b95460547c5efec7f3b8} 
+\index{carregaGrafo.c@{carregaGrafo.c}!SaveAdjBIN@{SaveAdjBIN}}
+\index{SaveAdjBIN@{SaveAdjBIN}!carregaGrafo.c@{carregaGrafo.c}}
+\doxysubsubsection{SaveAdjBIN()}
+{\footnotesize\ttfamily int Save\+Adj\+BIN (\begin{DoxyParamCaption}\item[{\textbf{ Adj} $\ast$}]{h,  }\item[{char $\ast$}]{file\+Name,  }\item[{int}]{cod\+Vertice\+Origem }\end{DoxyParamCaption})}
+
+
+
+Gravar \doxyref{Adj}{p. }{struct_adj} em ficheiro binario. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em h} & \\
+\hline
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ FILE*\ fp;}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ NULL)\ \textcolor{keywordflow}{return}\ -\/2;}
+\DoxyCodeLine{00156\ \ \ \ \ fp\ =\ fopen(fileName,\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{if}\ (fp\ ==\ NULL)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ Adj*\ aux\ =\ h;}
+\DoxyCodeLine{00160\ \ \ \ \ AdjFile\ auxFile;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ auxFile.codDestino\ =\ aux-\/>cod;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ auxFile.codOrigem\ =\ codVerticeOrigem;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ auxFile.weight\ =\ aux-\/>dist;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ fwrite(\&auxFile,\ 1,\ \textcolor{keyword}{sizeof}(AdjFile),\ fp);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>next;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ fclose(fp);}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00170\ \}}
+
+\end{DoxyCode}
+\label{carrega_grafo_8c_aa80647d4e50a74638a8299cec5fa2ec6} 
+\index{carregaGrafo.c@{carregaGrafo.c}!SaveGraphBIN@{SaveGraphBIN}}
+\index{SaveGraphBIN@{SaveGraphBIN}!carregaGrafo.c@{carregaGrafo.c}}
+\doxysubsubsection{SaveGraphBIN()}
+{\footnotesize\ttfamily int Save\+Graph\+BIN (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{h,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Grava Grafo em ficheiro binario. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em h} & \\
+\hline
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ NULL)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00122\ \ \ \ \ FILE*\ fp;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ r;}
+\DoxyCodeLine{00124\ \ \ \ \ fp\ =\ fopen(fileName,\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{if}\ (fp\ ==\ NULL)\ \textcolor{keywordflow}{return}\ -\/2;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ Vertice*\ aux\ =\ h;}
+\DoxyCodeLine{00128\ \ \ \ \ VerticeFile\ auxFicheiro;\ \textcolor{comment}{//estrutura\ de\ vertice\ para\ gravar\ em\ ficheiro}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ !=\ NULL)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ auxFicheiro.cod\ =\ aux-\/>cod;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ strcpy(auxFicheiro.nome,\ aux-\/>nome);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ fwrite(\&auxFicheiro,\ 1,\ \textcolor{keyword}{sizeof}(VerticeFile),\ fp);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pode\ gravar\ de\ imediato\ as\ adjacencias!}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux-\/>adjacentes)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ SaveAdjBIN(aux-\/>adjacentes,\ aux-\/>nome,\ aux-\/>cod);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ <\ 0)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>next;}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ fclose(fp);}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00142\ \}}
+
+\end{DoxyCode}

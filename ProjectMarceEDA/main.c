@@ -1,8 +1,8 @@
 ﻿/*****************************************************************//**
  * \file   main.c
- * \brief
+ * \brief Projeto Principal
  *
- * \author Teles
+ * \author Teles -23039 contact telesgomes96@gmail.com
  * \date   May 2024
  *********************************************************************/
 #include "grafo.h"
@@ -19,11 +19,11 @@ int main() {
 
     graph = LoadGraph(graph, "grafo.txt", &result);
     if (result) {
-        printf("Graph loaded successfully.\n");
+        printf("Grafo carregado com successo.\n");
         MostraGrafo(graph);
     }
     else {
-        printf("Failed to load graph.\n");
+        printf("Falha a gravar o grafo.\n");
     }
 
     // Save Graph Bin.

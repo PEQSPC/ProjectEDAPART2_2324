@@ -14,7 +14,7 @@
 #include <stdbool.h>
 #include <limits.h>
 #include "/Users/gg/Downloads/ProjectMarceEDA/LIBCreateGR/loadfile.h"
-#pragma comment(lib,"libs\\LIBCreateGR.lib")
+#pragma comment(lib,"C:\\Users\\gg\\Downloads\\ProjectMarceEDA\\ProjectMarceEDA\\libs\\LibCreateGR.lib")
 #pragma warning (disable: 4996)
 
 

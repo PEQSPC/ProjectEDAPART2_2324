@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafos - a9657: Código-Fonte de C:/EDA/EDA_Fase2/CriaGrafo_LIB/header.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Grafos - a9657<span id="projectnumber">&#160;2.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f0d532f88667657aec60251b661a6039.html">EDA_Fase2</a></li><li class="navelem"><a class="el" href="dir_b12e7d4b1c6d74879308a7e3c9e9950f.html">CriaGrafo_LIB</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">header.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_cria_grafo___l_i_b_2header_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*****************************************************************/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma warning (disable: 4996)</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;limits.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#a0c397a708cec89c74029582574516b30">   18</a></span><span class="preprocessor">#define MAX_NAME_LENGTH 10</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#af0f2173e3b202ddf5756531b4471dcb2">   19</a></span><span class="preprocessor">#define MAX_LINE_LENGTH 100</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma region Estrutura</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_adj.html">   22</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_adj.html">Adj</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_adj.html#ad3c16b4b12c9a128ea5b38064fd63bdf">   23</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_adj.html#ad3c16b4b12c9a128ea5b38064fd63bdf">cod</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_adj.html#ad26322213f34883edb234eb2bb10f558">   24</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_adj.html#ad26322213f34883edb234eb2bb10f558">dist</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_adj.html#add3dc41c17a70a3550aa24e2ab82ba28">   25</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_adj.html">Adj</a>* <a class="code hl_variable" href="struct_adj.html#add3dc41c17a70a3550aa24e2ab82ba28">next</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#acd9f17cb24ce73dde34e7a6bc62f92fb">   26</a></span>}<a class="code hl_typedef" href="_cria_grafo___l_i_b_2header_8h.html#acd9f17cb24ce73dde34e7a6bc62f92fb">Adj</a>;</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_vertice.html">   28</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_vertice.html">Vertice</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_vertice.html#a013a7e80cb7369e53863e0c407bf58c7">   29</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_vertice.html#a013a7e80cb7369e53863e0c407bf58c7">cod</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_vertice.html#aa0fe22aa0a33061c8b2470901f6f6c04">   30</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="struct_vertice.html#aa0fe22aa0a33061c8b2470901f6f6c04">nome</a>[<a class="code hl_define" href="_cria_grafo___l_i_b_2header_8h.html#a0c397a708cec89c74029582574516b30">MAX_NAME_LENGTH</a>];</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_vertice.html#a883addd1f202e3fbae518d32ee933c99">   31</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_vertice.html#a883addd1f202e3fbae518d32ee933c99">visitado</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_vertice.html#aa1bd4012c0471f0584f1e72bb6dc1d02">   32</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_vertice.html">Vertice</a>* <a class="code hl_variable" href="struct_vertice.html#aa1bd4012c0471f0584f1e72bb6dc1d02">next</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_vertice.html#a86ef39698e5b1ace3aad100e7976ab37">   33</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_adj.html">Adj</a>* <a class="code hl_variable" href="struct_vertice.html#a86ef39698e5b1ace3aad100e7976ab37">adjacentes</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#a901d403606dfb55e6d42b899c05d3347">   34</a></span>}<a class="code hl_typedef" href="_cria_grafo___l_i_b_2header_8h.html#a901d403606dfb55e6d42b899c05d3347">Vertice</a>;</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_g_r.html">   36</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_g_r.html">GR</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_g_r.html#a2f312949679de7c39afe0e94d32b07cc">   37</a></span>    <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* <a class="code hl_variable" href="struct_g_r.html#a2f312949679de7c39afe0e94d32b07cc">vertices</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_g_r.html#a9a5e2501b8a93fb70405d3016e5d9684">   38</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_g_r.html#a9a5e2501b8a93fb70405d3016e5d9684">numVertices</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#a673a73566a701f4c439ea07aafa902fd">   39</a></span>}<a class="code hl_typedef" href="_cria_grafo___l_i_b_2header_8h.html#a673a73566a701f4c439ea07aafa902fd">GR</a>;</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_adj_file.html">   41</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_adj_file.html">AdjFile</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_adj_file.html#a5f51c8901c70f82e7c98717dec987285">   42</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_adj_file.html#a5f51c8901c70f82e7c98717dec987285">codOrigem</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_adj_file.html#a55dd807954fedde7cb9b1631f8e8b509">   43</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_adj_file.html#a55dd807954fedde7cb9b1631f8e8b509">codDestino</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_adj_file.html#ad469d7a7be5478550ac13dd5b91c33e2">   44</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_adj_file.html#ad469d7a7be5478550ac13dd5b91c33e2">weight</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#aed6ccfc49dc362b265d9e5593ddebc3c">   45</a></span>} <a class="code hl_typedef" href="_cria_grafo___l_i_b_2header_8h.html#aed6ccfc49dc362b265d9e5593ddebc3c">AdjFile</a>;</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_vertice_file.html">   47</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_vertice_file.html">VerticeFile</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_vertice_file.html#ab96e92088c31c3f17de53a816546770c">   48</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_vertice_file.html#ab96e92088c31c3f17de53a816546770c">cod</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_vertice_file.html#aff28b3533aac0ac2c5d37546562a3334">   49</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="struct_vertice_file.html#aff28b3533aac0ac2c5d37546562a3334">nome</a>[<a class="code hl_define" href="_cria_grafo___l_i_b_2header_8h.html#a0c397a708cec89c74029582574516b30">MAX_NAME_LENGTH</a>];</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#aa4920a31cf6e48288634414a1998a96f">   50</a></span>} <a class="code hl_typedef" href="_cria_grafo___l_i_b_2header_8h.html#aa4920a31cf6e48288634414a1998a96f">VerticeFile</a>;</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#pragma region Criar Grafo</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><a class="code hl_struct" href="struct_g_r.html">GR</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a392a7087956e20780264e792da5c9229">createGraph</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_cria_grafo___l_i_b_2header_8h.html#ae3d9a7100e45c920d762937cf6683f3c">   57</a></span><a class="code hl_struct" href="struct_vertice.html">Vertice</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#ae3d9a7100e45c920d762937cf6683f3c">createVertice</a>(<span class="keywordtype">int</span> cod, <span class="keyword">const</span> <span class="keywordtype">char</span>* nome);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><a class="code hl_struct" href="struct_adj.html">Adj</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a4b0511fd7a174f2049c608c48030ce69">createAdj</a>(<span class="keywordtype">int</span> cod, <span class="keywordtype">float</span> dist);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><a class="code hl_struct" href="struct_vertice.html">Vertice</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a7e2895ac63d7fdc48b8d2b3353135521">InsereVertice</a>(<a class="code hl_struct" href="struct_vertice.html">Vertice</a>* h, <a class="code hl_struct" href="struct_vertice.html">Vertice</a>* novo, <span class="keywordtype">bool</span>* res);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">bool</span> <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a13f130d58972ab8baafdcab3fe4138db">addAdj</a>(<a class="code hl_struct" href="struct_vertice.html">Vertice</a>* vertice, <a class="code hl_struct" href="struct_adj.html">Adj</a>* adj);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><a class="code hl_struct" href="struct_adj.html">Adj</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a40fb616df0d15d5c7bd748829b0199fa">InsereAdj</a>(<a class="code hl_struct" href="struct_adj.html">Adj</a>* h, <a class="code hl_struct" href="struct_adj.html">Adj</a>* novo, <span class="keywordtype">bool</span>* res);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">bool</span> <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#ae3d9577a5a2b8c9978edb45947b830dd">removeAdj</a>(<a class="code hl_struct" href="struct_vertice.html">Vertice</a>* vertice, <span class="keywordtype">int</span> cod);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordtype">bool</span> <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#aa87042b6a31dea48104738ccdb7d928c">removeVertice</a>(<a class="code hl_struct" href="struct_g_r.html">GR</a>* graph, <span class="keywordtype">int</span> cod);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><a class="code hl_struct" href="struct_vertice.html">Vertice</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#ae12fd300bf592ed8faf9a196557f69c6">InsereAdjacenteVerticeCod</a>(<a class="code hl_struct" href="struct_vertice.html">Vertice</a>* g, <span class="keywordtype">int</span> codOrigem, <span class="keywordtype">int</span> codDest, <span class="keywordtype">float</span> peso, <span class="keywordtype">bool</span>* res);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">bool</span> <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#abfb573390a37d6f33b48bc94df3d9cba">ExisteAdjacentes</a>(<a class="code hl_struct" href="struct_adj.html">Adj</a>* h, <span class="keywordtype">int</span> cod);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><a class="code hl_struct" href="struct_vertice.html">Vertice</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a39e6c105a025bc8041397e52642c2612">DestroyGraph</a>(<a class="code hl_struct" href="struct_vertice.html">Vertice</a>* g);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><a class="code hl_struct" href="struct_adj.html">Adj</a>* <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#abf4b85948fa983ee4d5474e2d2715422">DestroyAdj</a>(<a class="code hl_struct" href="struct_adj.html">Adj</a>* h);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keywordtype">void</span> <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a48bf3eac39b63746c647c9ad515077fd">MostraAdjacencias</a>(<a class="code hl_struct" href="struct_adj.html">Adj</a>* h);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">void</span> <a class="code hl_function" href="_cria_grafo___l_i_b_2header_8h.html#a167543a96ceb172a43ece7e79625acd1">MostraGrafo</a>(<a class="code hl_struct" href="struct_vertice.html">Vertice</a>* g);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a0c397a708cec89c74029582574516b30"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a0c397a708cec89c74029582574516b30">MAX_NAME_LENGTH</a></div><div class="ttdeci">#define MAX_NAME_LENGTH</div><div class="ttdef"><b>Definição</b> header.h:18</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a13f130d58972ab8baafdcab3fe4138db"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a13f130d58972ab8baafdcab3fe4138db">addAdj</a></div><div class="ttdeci">bool addAdj(Vertice *vertice, Adj *adj)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:61</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a167543a96ceb172a43ece7e79625acd1"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a167543a96ceb172a43ece7e79625acd1">MostraGrafo</a></div><div class="ttdeci">void MostraGrafo(Vertice *g)</div><div class="ttdoc">Apresenta grafo.</div><div class="ttdef"><b>Definição</b> criaGrafo.c:249</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a392a7087956e20780264e792da5c9229"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a392a7087956e20780264e792da5c9229">createGraph</a></div><div class="ttdeci">GR * createGraph()</div><div class="ttdef"><b>Definição</b> criaGrafo.c:19</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a39e6c105a025bc8041397e52642c2612"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a39e6c105a025bc8041397e52642c2612">DestroyGraph</a></div><div class="ttdeci">Vertice * DestroyGraph(Vertice *g)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:194</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a40fb616df0d15d5c7bd748829b0199fa"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a40fb616df0d15d5c7bd748829b0199fa">InsereAdj</a></div><div class="ttdeci">Adj * InsereAdj(Adj *h, Adj *novo, bool *res)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:66</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a48bf3eac39b63746c647c9ad515077fd"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a48bf3eac39b63746c647c9ad515077fd">MostraAdjacencias</a></div><div class="ttdeci">void MostraAdjacencias(Adj *h)</div><div class="ttdoc">Mostra lista de adjacentes.</div><div class="ttdef"><b>Definição</b> criaGrafo.c:236</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a4b0511fd7a174f2049c608c48030ce69"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a4b0511fd7a174f2049c608c48030ce69">createAdj</a></div><div class="ttdeci">Adj * createAdj(int cod, float dist)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:38</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a673a73566a701f4c439ea07aafa902fd"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a673a73566a701f4c439ea07aafa902fd">GR</a></div><div class="ttdeci">struct GR GR</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a7e2895ac63d7fdc48b8d2b3353135521"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a7e2895ac63d7fdc48b8d2b3353135521">InsereVertice</a></div><div class="ttdeci">Vertice * InsereVertice(Vertice *h, Vertice *novo, bool *res)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:47</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_a901d403606dfb55e6d42b899c05d3347"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#a901d403606dfb55e6d42b899c05d3347">Vertice</a></div><div class="ttdeci">struct Vertice Vertice</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_aa4920a31cf6e48288634414a1998a96f"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#aa4920a31cf6e48288634414a1998a96f">VerticeFile</a></div><div class="ttdeci">struct VerticeFile VerticeFile</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_aa87042b6a31dea48104738ccdb7d928c"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#aa87042b6a31dea48104738ccdb7d928c">removeVertice</a></div><div class="ttdeci">bool removeVertice(GR *graph, int cod)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:108</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_abf4b85948fa983ee4d5474e2d2715422"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#abf4b85948fa983ee4d5474e2d2715422">DestroyAdj</a></div><div class="ttdeci">Adj * DestroyAdj(Adj *h)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:216</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_abfb573390a37d6f33b48bc94df3d9cba"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#abfb573390a37d6f33b48bc94df3d9cba">ExisteAdjacentes</a></div><div class="ttdeci">bool ExisteAdjacentes(Adj *h, int cod)</div><div class="ttdoc">Verifica se determinado adj ja existe. Forma Recursiva.</div><div class="ttdef"><b>Definição</b> criaGrafo.c:180</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_acd9f17cb24ce73dde34e7a6bc62f92fb"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#acd9f17cb24ce73dde34e7a6bc62f92fb">Adj</a></div><div class="ttdeci">struct Adj Adj</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_ae12fd300bf592ed8faf9a196557f69c6"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#ae12fd300bf592ed8faf9a196557f69c6">InsereAdjacenteVerticeCod</a></div><div class="ttdeci">Vertice * InsereAdjacenteVerticeCod(Vertice *g, int codOrigem, int codDest, float peso, bool *res)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:142</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_ae3d9577a5a2b8c9978edb45947b830dd"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#ae3d9577a5a2b8c9978edb45947b830dd">removeAdj</a></div><div class="ttdeci">bool removeAdj(Vertice *vertice, int cod)</div><div class="ttdef"><b>Definição</b> criaGrafo.c:88</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_ae3d9a7100e45c920d762937cf6683f3c"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#ae3d9a7100e45c920d762937cf6683f3c">createVertice</a></div><div class="ttdeci">Vertice * createVertice(int cod, const char *nome)</div></div>
+<div class="ttc" id="a_cria_grafo___l_i_b_2header_8h_html_aed6ccfc49dc362b265d9e5593ddebc3c"><div class="ttname"><a href="_cria_grafo___l_i_b_2header_8h.html#aed6ccfc49dc362b265d9e5593ddebc3c">AdjFile</a></div><div class="ttdeci">struct AdjFile AdjFile</div></div>
+<div class="ttc" id="astruct_adj_file_html"><div class="ttname"><a href="struct_adj_file.html">AdjFile</a></div><div class="ttdef"><b>Definição</b> header.h:41</div></div>
+<div class="ttc" id="astruct_adj_file_html_a55dd807954fedde7cb9b1631f8e8b509"><div class="ttname"><a href="struct_adj_file.html#a55dd807954fedde7cb9b1631f8e8b509">AdjFile::codDestino</a></div><div class="ttdeci">int codDestino</div><div class="ttdef"><b>Definição</b> header.h:43</div></div>
+<div class="ttc" id="astruct_adj_file_html_a5f51c8901c70f82e7c98717dec987285"><div class="ttname"><a href="struct_adj_file.html#a5f51c8901c70f82e7c98717dec987285">AdjFile::codOrigem</a></div><div class="ttdeci">int codOrigem</div><div class="ttdef"><b>Definição</b> header.h:42</div></div>
+<div class="ttc" id="astruct_adj_file_html_ad469d7a7be5478550ac13dd5b91c33e2"><div class="ttname"><a href="struct_adj_file.html#ad469d7a7be5478550ac13dd5b91c33e2">AdjFile::weight</a></div><div class="ttdeci">float weight</div><div class="ttdef"><b>Definição</b> header.h:44</div></div>
+<div class="ttc" id="astruct_adj_html"><div class="ttname"><a href="struct_adj.html">Adj</a></div><div class="ttdef"><b>Definição</b> header.h:22</div></div>
+<div class="ttc" id="astruct_adj_html_ad26322213f34883edb234eb2bb10f558"><div class="ttname"><a href="struct_adj.html#ad26322213f34883edb234eb2bb10f558">Adj::dist</a></div><div class="ttdeci">float dist</div><div class="ttdef"><b>Definição</b> header.h:24</div></div>
+<div class="ttc" id="astruct_adj_html_ad3c16b4b12c9a128ea5b38064fd63bdf"><div class="ttname"><a href="struct_adj.html#ad3c16b4b12c9a128ea5b38064fd63bdf">Adj::cod</a></div><div class="ttdeci">int cod</div><div class="ttdef"><b>Definição</b> header.h:23</div></div>
+<div class="ttc" id="astruct_adj_html_add3dc41c17a70a3550aa24e2ab82ba28"><div class="ttname"><a href="struct_adj.html#add3dc41c17a70a3550aa24e2ab82ba28">Adj::next</a></div><div class="ttdeci">struct Adj * next</div><div class="ttdef"><b>Definição</b> header.h:25</div></div>
+<div class="ttc" id="astruct_g_r_html"><div class="ttname"><a href="struct_g_r.html">GR</a></div><div class="ttdef"><b>Definição</b> header.h:36</div></div>
+<div class="ttc" id="astruct_g_r_html_a2f312949679de7c39afe0e94d32b07cc"><div class="ttname"><a href="struct_g_r.html#a2f312949679de7c39afe0e94d32b07cc">GR::vertices</a></div><div class="ttdeci">Vertice * vertices</div><div class="ttdef"><b>Definição</b> header.h:37</div></div>
+<div class="ttc" id="astruct_g_r_html_a9a5e2501b8a93fb70405d3016e5d9684"><div class="ttname"><a href="struct_g_r.html#a9a5e2501b8a93fb70405d3016e5d9684">GR::numVertices</a></div><div class="ttdeci">int numVertices</div><div class="ttdef"><b>Definição</b> header.h:38</div></div>
+<div class="ttc" id="astruct_vertice_file_html"><div class="ttname"><a href="struct_vertice_file.html">VerticeFile</a></div><div class="ttdef"><b>Definição</b> header.h:47</div></div>
+<div class="ttc" id="astruct_vertice_file_html_ab96e92088c31c3f17de53a816546770c"><div class="ttname"><a href="struct_vertice_file.html#ab96e92088c31c3f17de53a816546770c">VerticeFile::cod</a></div><div class="ttdeci">int cod</div><div class="ttdef"><b>Definição</b> header.h:48</div></div>
+<div class="ttc" id="astruct_vertice_file_html_aff28b3533aac0ac2c5d37546562a3334"><div class="ttname"><a href="struct_vertice_file.html#aff28b3533aac0ac2c5d37546562a3334">VerticeFile::nome</a></div><div class="ttdeci">char nome[MAX_NAME_LENGTH]</div><div class="ttdef"><b>Definição</b> header.h:49</div></div>
+<div class="ttc" id="astruct_vertice_html"><div class="ttname"><a href="struct_vertice.html">Vertice</a></div><div class="ttdef"><b>Definição</b> header.h:28</div></div>
+<div class="ttc" id="astruct_vertice_html_a013a7e80cb7369e53863e0c407bf58c7"><div class="ttname"><a href="struct_vertice.html#a013a7e80cb7369e53863e0c407bf58c7">Vertice::cod</a></div><div class="ttdeci">int cod</div><div class="ttdef"><b>Definição</b> header.h:29</div></div>
+<div class="ttc" id="astruct_vertice_html_a86ef39698e5b1ace3aad100e7976ab37"><div class="ttname"><a href="struct_vertice.html#a86ef39698e5b1ace3aad100e7976ab37">Vertice::adjacentes</a></div><div class="ttdeci">struct Adj * adjacentes</div><div class="ttdef"><b>Definição</b> header.h:33</div></div>
+<div class="ttc" id="astruct_vertice_html_a883addd1f202e3fbae518d32ee933c99"><div class="ttname"><a href="struct_vertice.html#a883addd1f202e3fbae518d32ee933c99">Vertice::visitado</a></div><div class="ttdeci">bool visitado</div><div class="ttdef"><b>Definição</b> header.h:31</div></div>
+<div class="ttc" id="astruct_vertice_html_aa0fe22aa0a33061c8b2470901f6f6c04"><div class="ttname"><a href="struct_vertice.html#aa0fe22aa0a33061c8b2470901f6f6c04">Vertice::nome</a></div><div class="ttdeci">char nome[MAX_NAME_LENGTH]</div><div class="ttdef"><b>Definição</b> header.h:30</div></div>
+<div class="ttc" id="astruct_vertice_html_aa1bd4012c0471f0584f1e72bb6dc1d02"><div class="ttname"><a href="struct_vertice.html#aa1bd4012c0471f0584f1e72bb6dc1d02">Vertice::next</a></div><div class="ttdeci">struct Vertice * next</div><div class="ttdef"><b>Definição</b> header.h:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

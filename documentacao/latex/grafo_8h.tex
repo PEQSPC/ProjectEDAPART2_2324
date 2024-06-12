@@ -1,0 +1,402 @@
+\doxysection{Referência ao ficheiro C\+:/\+EDA/\+EDA\+\_\+\+Fase2/\+EDA\+\_\+\+Fase2/grafo.h}
+\label{grafo_8h}\index{C:/EDA/EDA\_Fase2/EDA\_Fase2/grafo.h@{C:/EDA/EDA\_Fase2/EDA\_Fase2/grafo.h}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include "{}\textbackslash{}\+EDA\textbackslash{}\+EDA\+\_\+\+Fase2\textbackslash{}\+Cria\+Grafo\+\_\+\+LIB\textbackslash{}header.\+h"{}}\newline
+{\ttfamily \#include "{}\textbackslash{}\+EDA\textbackslash{}\+EDA\+\_\+\+Fase2\textbackslash{}\+Funcoes\+\_\+\+LIB\textbackslash{}header.\+h"{}}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Best}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ MAX}~5
+\item 
+\#define \textbf{ MAXDISTANCE}~9999
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Best \textbf{ Best}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ Procura\+Vertice\+Cod} (\textbf{ Vertice} $\ast$g, int cod)
+\item 
+bool \textbf{ Depth\+First\+Search\+Rec} (\textbf{ Vertice} $\ast$g, int origem, int dest)
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ Reset\+Vertices\+Visitados} (\textbf{ Vertice} $\ast$g)
+\item 
+\textbf{ Best} \textbf{ Best\+Path} (\textbf{ Vertice} $\ast$g, int n, int v)
+\begin{DoxyCompactList}\small\item\em Dijkstraos Algorithm. \end{DoxyCompactList}\item 
+void \textbf{ Show\+All\+Path} (\textbf{ Best} b, int n, int v)
+\item 
+bool \textbf{ Breadth\+First\+Search} (\textbf{ Vertice} $\ast$lista\+Vertice, int vertice\+Origem, int destino)
+\item 
+bool \textbf{ verifica\+Fila\+Vazia} (int $\ast$primeiro, int $\ast$ultimo)
+\item 
+bool \textbf{ remover\+Fila} (int fila[$\,$], int $\ast$ultimo, int $\ast$vertice)
+\item 
+bool \textbf{ inserir\+Fila} (int fila[$\,$], int $\ast$primeiro, int vertice)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira -\/ N� 9657 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+Maio 2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentação das macros}
+\label{grafo_8h_a392fb874e547e582e9c66a08a1f23326} 
+\index{grafo.h@{grafo.h}!MAX@{MAX}}
+\index{MAX@{MAX}!grafo.h@{grafo.h}}
+\doxysubsubsection{MAX}
+{\footnotesize\ttfamily \#define MAX~5}
+
+\label{grafo_8h_a010fa716ced1170c05d8fc9da46a5d34} 
+\index{grafo.h@{grafo.h}!MAXDISTANCE@{MAXDISTANCE}}
+\index{MAXDISTANCE@{MAXDISTANCE}!grafo.h@{grafo.h}}
+\doxysubsubsection{MAXDISTANCE}
+{\footnotesize\ttfamily \#define MAXDISTANCE~9999}
+
+
+
+\doxysubsection{Documentação dos tipos}
+\label{grafo_8h_aac29ddebe4eb20f71937c0605f314505} 
+\index{grafo.h@{grafo.h}!Best@{Best}}
+\index{Best@{Best}!grafo.h@{grafo.h}}
+\doxysubsubsection{Best}
+{\footnotesize\ttfamily typedef struct Best Best}
+
+
+
+\doxysubsection{Documentação das funções}
+\label{grafo_8h_aefda059db6d274b8a661afc88e71afbf} 
+\index{grafo.h@{grafo.h}!BestPath@{BestPath}}
+\index{BestPath@{BestPath}!grafo.h@{grafo.h}}
+\doxysubsubsection{BestPath()}
+{\footnotesize\ttfamily \textbf{ Best} Best\+Path (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g,  }\item[{int}]{n,  }\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Dijkstraos Algorithm. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em adj\+Matrix} & \\
+\hline
+{\em n} & total of Vertices \\
+\hline
+{\em v} & initial vertice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ cost[MAX][MAX],\ distance[MAX],\ pred[MAX];}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ visited[MAX],\ count,\ mindistance,\ nextnode,\ i,\ j;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//pred[]\ guarda\ o\ vertice\ anterior\ ao\ atual}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//count\ numero\ de\ nodos\ visitados\ ate\ ao\ momento}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//cria\ matriz\ de\ custos\ a\ partir\ da\ matriz\ de\ adjacencias}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//inicializa\ matriz\ de\ custos}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ n;\ j++)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ cost[i][j]\ =\ MAXDISTANCE;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//Colocar\ custos\ efectivos}}
+\DoxyCodeLine{00040\ \ \ \ \ Vertice*\ aux\ =\ g;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux-\/>adjacentes)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ Adj*\ auxAdj\ =\ aux-\/>adjacentes;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (auxAdj)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cost[aux-\/>cod][auxAdj-\/>cod]\ =\ auxAdj-\/>dist;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auxAdj\ =\ auxAdj-\/>next;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>next;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//pred[],distance[]\ and\ visited[]}}
+\DoxyCodeLine{00053\ \ \ \ \ aux\ =\ g;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ distance[aux-\/>cod]\ =\ cost[v][aux-\/>cod];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ pred[aux-\/>cod]\ =\ v;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ visited[aux-\/>cod]\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>next;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ distance[v]\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ visited[v]\ =\ 1;}
+\DoxyCodeLine{00064\ \ \ \ \ count\ =\ 1;}
+\DoxyCodeLine{00065\ \ \ \ \ nextnode\ =\ 0;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{while}\ (count\ <\ n\ -\/\ 1)}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ mindistance\ =\ MAXDISTANCE;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//nextnode\ e\ o\ vertice\ e\ menor\ distancia\ do\ atual}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance[i]\ <\ mindistance\ \&\&\ !visited[i])}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mindistance\ =\ distance[i];}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nextnode\ =\ i;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Verifica\ se\ existe\ um\ melhor\ caminho}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ visited[nextnode]\ =\ 1;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!visited[i])}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mindistance\ +\ cost[nextnode][i]\ <\ distance[i])}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ distance[i]\ =\ mindistance\ +\ cost[nextnode][i];}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pred[i]\ =\ nextnode;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//Devolve\ resultados}}
+\DoxyCodeLine{00092\ \ \ \ \ Best\ b;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ b.anteriores[i]\ =\ pred[i];}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ b.distance[i]\ =\ distance[i];}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00098\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_a673dda65ca11215068a0d43c8c93b13f} 
+\index{grafo.h@{grafo.h}!BreadthFirstSearch@{BreadthFirstSearch}}
+\index{BreadthFirstSearch@{BreadthFirstSearch}!grafo.h@{grafo.h}}
+\doxysubsubsection{BreadthFirstSearch()}
+{\footnotesize\ttfamily bool Breadth\+First\+Search (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{lista\+Vertice,  }\item[{int}]{vertice\+Origem,  }\item[{int}]{destino }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{int}\ fila[300];}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (verticeOrigem\ ==\ destino)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ res\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{int}\ primeiro\ =\ 0;}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{int}\ ultimo\ =\ primeiro;}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{int}\ origem;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ Vertice*\ auxOrigem\ =\ listaVertice;}
+\DoxyCodeLine{00189\ \ \ \ \ Vertice*\ auxVertice\ =\ auxOrigem;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{while}\ (auxOrigem\ !=\ NULL\ \&\&\ auxOrigem-\/>cod\ !=\ verticeOrigem)\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ auxOrigem\ =\ auxOrigem-\/>next;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (auxOrigem\ ==\ NULL)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ res\ =\ inserirFila(fila,\ \&primeiro,\ auxOrigem-\/>cod);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ ==\ \textcolor{keyword}{false})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ auxOrigem-\/>visitado\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{while}\ (verificaFilaVazia(\&primeiro,\ \&ultimo)\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00203\ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ res\ =\ removerFila(fila,\ \&ultimo,\ \&origem);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ ==\ \textcolor{keyword}{false})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (origem\ ==\ destino)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ Vertice*\ auxOrigem\ =\ listaVertice;}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (auxOrigem\ !=\ NULL\ \&\&\ auxOrigem-\/>cod\ !=\ origem)\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ auxOrigem\ =\ auxOrigem-\/>next;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (auxOrigem\ ==\ NULL)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ Adj*\ auxAresta\ =\ auxOrigem-\/>adjacentes;}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (auxAresta\ !=\ NULL)}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ Vertice*\ auxOrigem\ =\ listaVertice;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (auxOrigem\ !=\ NULL\ \&\&\ auxOrigem-\/>cod\ !=\ auxAresta-\/>cod)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auxOrigem\ =\ auxOrigem-\/>next;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (auxOrigem\ ==\ NULL)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (auxOrigem-\/>visitado\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ =\ inserirFila(fila,\ \&primeiro,\ auxAresta-\/>cod);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ ==\ \textcolor{keyword}{false})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auxOrigem-\/>visitado\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ auxAresta\ =\ auxAresta-\/>next;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00239\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_a4aa205c7e008462d52c2b7ff0b1e757c} 
+\index{grafo.h@{grafo.h}!DepthFirstSearchRec@{DepthFirstSearchRec}}
+\index{DepthFirstSearchRec@{DepthFirstSearchRec}!grafo.h@{grafo.h}}
+\doxysubsubsection{DepthFirstSearchRec()}
+{\footnotesize\ttfamily bool Depth\+First\+Search\+Rec (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g,  }\item[{int}]{origem,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ j;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (origem\ <\ 1)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (origem\ ==\ dest)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ Vertice*\ aux\ =\ ProcuraVerticeCod(g,\ origem);}
+\DoxyCodeLine{00126\ \ \ \ \ aux-\/>visitado\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00127\ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ Adj*\ adj\ =\ aux-\/>adjacentes;}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{while}\ (adj)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ Vertice*\ aux\ =\ ProcuraVerticeCod(g,\ adj-\/>cod);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux-\/>visitado\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ existe\ =\ DepthFirstSearchRec(g,\ adj-\/>cod,\ dest);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ existe;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>next;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_a097ee37fa2b07dea29c17f3dd92bb0a6} 
+\index{grafo.h@{grafo.h}!inserirFila@{inserirFila}}
+\index{inserirFila@{inserirFila}!grafo.h@{grafo.h}}
+\doxysubsubsection{inserirFila()}
+{\footnotesize\ttfamily bool inserir\+Fila (\begin{DoxyParamCaption}\item[{int}]{fila[$\,$],  }\item[{int $\ast$}]{primeiro,  }\item[{int}]{vertice }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ fila[*primeiro]\ =\ vertice;}
+\DoxyCodeLine{00161\ \ \ \ \ *primeiro\ =\ *primeiro\ +\ 1;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00163\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_a23c0be295e01182ff0ef8f733783c71f} 
+\index{grafo.h@{grafo.h}!ProcuraVerticeCod@{ProcuraVerticeCod}}
+\index{ProcuraVerticeCod@{ProcuraVerticeCod}!grafo.h@{grafo.h}}
+\doxysubsubsection{ProcuraVerticeCod()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Procura\+Vertice\+Cod (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (g\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (g-\/>cod\ ==\ cod)\ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}(ProcuraVerticeCod(g-\/>next,\ cod));}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_aac4fe9c5b465792427294f830e334872} 
+\index{grafo.h@{grafo.h}!removerFila@{removerFila}}
+\index{removerFila@{removerFila}!grafo.h@{grafo.h}}
+\doxysubsubsection{removerFila()}
+{\footnotesize\ttfamily bool remover\+Fila (\begin{DoxyParamCaption}\item[{int}]{fila[$\,$],  }\item[{int $\ast$}]{ultimo,  }\item[{int $\ast$}]{vertice }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ *vertice\ =\ fila[*ultimo];}
+\DoxyCodeLine{00167\ \ \ \ \ *ultimo\ =\ *ultimo\ +\ 1;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00169\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_a4ed237d8bb5add540cdb299d55928424} 
+\index{grafo.h@{grafo.h}!ResetVerticesVisitados@{ResetVerticesVisitados}}
+\index{ResetVerticesVisitados@{ResetVerticesVisitados}!grafo.h@{grafo.h}}
+\doxysubsubsection{ResetVerticesVisitados()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Reset\+Vertices\+Visitados (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ Vertice*\ aux\ =\ g;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux)\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ aux-\/>visitado\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>next;}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00153\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_a4ea9d05dfeb219cf833d3c77b91e59df} 
+\index{grafo.h@{grafo.h}!ShowAllPath@{ShowAllPath}}
+\index{ShowAllPath@{ShowAllPath}!grafo.h@{grafo.h}}
+\doxysubsubsection{ShowAllPath()}
+{\footnotesize\ttfamily void Show\+All\+Path (\begin{DoxyParamCaption}\item[{\textbf{ Best}}]{b,  }\item[{int}]{n,  }\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ j;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ v)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nDistancia\ ate\ ao\ vertice\ \%d\ =\ \%d"{}},\ i,\ b.distance[i]);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nPath\ =\ \%d"{}},\ i);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ i;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ b.anteriores[j];}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ <-\/\ \%d"{}},\ j);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (j\ !=\ v);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+\label{grafo_8h_aa2782e950dabd49d5d047f55469f2c25} 
+\index{grafo.h@{grafo.h}!verificaFilaVazia@{verificaFilaVazia}}
+\index{verificaFilaVazia@{verificaFilaVazia}!grafo.h@{grafo.h}}
+\doxysubsubsection{verificaFilaVazia()}
+{\footnotesize\ttfamily bool verifica\+Fila\+Vazia (\begin{DoxyParamCaption}\item[{int $\ast$}]{primeiro,  }\item[{int $\ast$}]{ultimo }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{if}\ (*primeiro\ ==\ *ultimo)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \}}
+
+\end{DoxyCode}

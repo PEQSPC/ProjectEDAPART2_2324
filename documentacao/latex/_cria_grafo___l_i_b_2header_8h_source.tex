@@ -1,0 +1,81 @@
+\doxysection{header.\+h}
+\label{_cria_grafo___l_i_b_2header_8h_source}\index{C:/EDA/EDA\_Fase2/CriaGrafo\_LIB/header.h@{C:/EDA/EDA\_Fase2/CriaGrafo\_LIB/header.h}}
+\textbf{ Ir para a documentação deste ficheiro.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#pragma\ warning\ (disable:\ 4996)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MAX\_NAME\_LENGTH\ 10}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ MAX\_LINE\_LENGTH\ 100}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ region\ Estrutura}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Adj\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ cod;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ dist;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }Adj*\ next;}
+\DoxyCodeLine{00026\ \}Adj;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Vertice\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ cod;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ nome[MAX\_NAME\_LENGTH];}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ visitado;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }Vertice*\ next;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{struct\ }Adj*\ adjacentes;}
+\DoxyCodeLine{00034\ \}Vertice;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }GR\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ Vertice*\ vertices;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ numVertices;}
+\DoxyCodeLine{00039\ \}GR;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }AdjFile\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ codOrigem;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ codDestino;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ weight;}
+\DoxyCodeLine{00045\ \}\ AdjFile;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }VerticeFile\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ cod;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{char}\ nome[MAX\_NAME\_LENGTH];}
+\DoxyCodeLine{00050\ \}\ VerticeFile;}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#pragma\ region\ Criar\ Grafo}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ GR*\ createGraph();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ Vertice*\ createVertice(\textcolor{keywordtype}{int}\ cod,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ Adj*\ createAdj(\textcolor{keywordtype}{int}\ cod,\ \textcolor{keywordtype}{float}\ dist);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ Vertice*\ InsereVertice(Vertice*\ h,\ Vertice*\ novo,\ \textcolor{keywordtype}{bool}*\ res);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{bool}\ addAdj(Vertice*\ vertice,\ Adj*\ adj);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ Adj*\ InsereAdj(Adj*\ h,\ Adj*\ novo,\ \textcolor{keywordtype}{bool}*\ res);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{bool}\ removeAdj(Vertice*\ vertice,\ \textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{bool}\ removeVertice(GR*\ graph,\ \textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ Vertice*\ InsereAdjacenteVerticeCod(Vertice*\ g,\ \textcolor{keywordtype}{int}\ codOrigem,\ \textcolor{keywordtype}{int}\ codDest,\ \textcolor{keywordtype}{float}\ peso,\ \textcolor{keywordtype}{bool}*\ res);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{bool}\ ExisteAdjacentes(Adj*\ h,\ \textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ Vertice*\ DestroyGraph(Vertice*\ g);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ Adj*\ DestroyAdj(Adj*\ h);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ MostraAdjacencias(Adj*\ h);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ MostraGrafo(Vertice*\ g);}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#pragma\ endregion}}
+
+\end{DoxyCode}

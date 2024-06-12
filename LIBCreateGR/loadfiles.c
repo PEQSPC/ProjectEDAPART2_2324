@@ -9,7 +9,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "loadfile.h"
-#include "/Users/gg/Downloads/ProjectMarceEDA/ProjectMarceEDA/grafo.h"
+#include "..\\ProjectMarceEDA\grafo.h"
 
 
 #pragma region Create Graph
@@ -321,53 +321,77 @@ void MostraGrafo(Vertice* g) {
  *
  */
 Vertice* LoadGraph(Vertice* h, const char* fileName, bool* res) {
+    // Inicializar o resultado como falso
     *res = false;
+
+    // Abrir o arquivo para leitura
     FILE* fp = fopen(fileName, "r");
+    // Se não abrir o arquivo, mostrar o erro e returnar NULL
     if (fp == NULL) {
-        perror("Failed to open file");
+        perror("Falha ao abrir o arquivo");
+        *res = false;
         return NULL;
     }
 
-    char line[256];
+    char line[256]; // Buffer para ler linhas do arquivo
+    // Ler o arquivo linha por linha
     while (fgets(line, sizeof(line), fp)) {
+        // Dividir a linha em tokens usando a vírgula como delimitador
         char* token = strtok(line, ",");
-        if (token == NULL) continue;
+        if (token == NULL) continue; // Se o primeiro token for NULL, continuar para a próxima linha
 
+        // Converter o primeiro token em um inteiro (código do vértice)
         int cod = atoi(token);
 
+        //o próximo token (nome do vértice)
         token = strtok(NULL, ",");
-        if (token == NULL) continue;
+        if (token == NULL) continue; // Se o segundo token for NULL, continuar com a próxima linha
 
-        char nome[MAX_NAME_LENGTH];
+        char nome[MAX_NAME_LENGTH]; // Buffer para o nome do vértice
+        // Copiar o nome do vértice para o buffer, assegurando de não ultrapassar o tamanho máximo
         strncpy(nome, token, MAX_NAME_LENGTH - 1);
         nome[MAX_NAME_LENGTH - 1] = '\0';
 
+        // Criar um novo vértice com o código e o nome lidos em memoria
         Vertice* novo = createVertice(cod, nome);
+        // Inserir o novo vértice no estrutura do grafo
         h = InsereVertice(h, novo, res);
 
+        // Obter o próximo token para processar as adjacências
         token = strtok(NULL, ",");
+        //Processar cada adjacência do vértice
         while (token != NULL) {
+            // Dividir o token de adjacência em código e distância usando ':' como delimitador
             char* adjToken = strtok(token, ":");
             if (adjToken == NULL) break;
 
+            // Convertimos o primeiro token de adjacência em um inteiro (código do vértice adjacente)
             int adjCod = atoi(adjToken);
 
+            // Obtemos o próximo token (distância até a adjacência)
             adjToken = strtok(NULL, ":");
             if (adjToken == NULL) break;
 
+            // Convertimos o segundo token de adjacência em um float (distância)
             float dist = atof(adjToken);
 
+            // Criamos uma nova adjacência com o código e a distância
             Adj* adj = createAdj(adjCod, dist);
+            // Adicionamos a adjacência ao vértice
             addAdj(novo, adj);
 
+            // Obtemos o próximo token de adjacência
             token = strtok(NULL, ",");
         }
 
     }
+    // Fechamos o arquivo
     fclose(fp);
+    // Indicamos que o processo foi bem-sucedido
     *res = true;
-    return h;
+    return h; // Retornamos o grafo atualizado
 }
+
 
 
 /**

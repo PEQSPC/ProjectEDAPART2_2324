@@ -1,0 +1,55 @@
+\doxysection{grafo.\+h}
+\label{grafo_8h_source}\index{C:/EDA/EDA\_Fase2/EDA\_Fase2/grafo.h@{C:/EDA/EDA\_Fase2/EDA\_Fase2/grafo.h}}
+\textbf{ Ir para a documentação deste ficheiro.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{\ /*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <locale.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\(\backslash\)EDA\(\backslash\)EDA\_Fase2\(\backslash\)CriaGrafo\_LIB\(\backslash\)header.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#pragma\ comment(lib,"{}C:\(\backslash\)\(\backslash\)EDA\(\backslash\)\(\backslash\)EDA\_Fase2\(\backslash\)\(\backslash\)Libs\_9657\(\backslash\)\(\backslash\)CriaGrafo\_LIB.lib"{})}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\(\backslash\)EDA\(\backslash\)EDA\_Fase2\(\backslash\)Funcoes\_LIB\(\backslash\)header.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ comment(lib,"{}C:\(\backslash\)\(\backslash\)EDA\(\backslash\)\(\backslash\)EDA\_Fase2\(\backslash\)\(\backslash\)Libs\_Carrega\_9657\(\backslash\)\(\backslash\)Funcoes\_LIB.lib"{})}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ warning\ (disable:\ 4996)}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ region\ DFT\ and\ Sum}}
+\DoxyCodeLine{00024\ Vertice*\ ProcuraVerticeCod(Vertice*\ g,\ \textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{bool}\ DepthFirstSearchRec(Vertice*\ g,\ \textcolor{keywordtype}{int}\ origem,\ \textcolor{keywordtype}{int}\ dest);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ Vertice*\ ResetVerticesVisitados(Vertice*\ g);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ region\ Funcoes\ Aula}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//Auxiliar\ ao\ Dijkstra}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ MAX\ 5}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ MAXDISTANCE\ 9999}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Best\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ distance[MAX];\ \ \ \ \ \ \ \textcolor{comment}{//peso}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ anteriores[MAX];\ \ \ \textcolor{comment}{//vertices\ cod}}
+\DoxyCodeLine{00040\ \}Best;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//n\ total\ vertices\ ,\ v\ initial\ vertice}}
+\DoxyCodeLine{00043\ Best\ BestPath(Vertice*\ g,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ ShowAllPath(Best\ b,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#pragma\ endregion\ }}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#pragma\ region\ Procura\ em\ Largura\ BFS}}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{bool}\ BreadthFirstSearch(Vertice*\ listaVertice,\ \textcolor{keywordtype}{int}\ verticeOrigem,\ \textcolor{keywordtype}{int}\ destino);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{bool}\ verificaFilaVazia(\textcolor{keywordtype}{int}*\ primeiro,\ \textcolor{keywordtype}{int}*\ ultimo);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{bool}\ removerFila(\textcolor{keywordtype}{int}\ fila[],\ \textcolor{keywordtype}{int}*\ ultimo,\ \textcolor{keywordtype}{int}*\ vertice);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{bool}\ inserirFila(\textcolor{keywordtype}{int}\ fila[],\ \textcolor{keywordtype}{int}*\ primeiro,\ \textcolor{keywordtype}{int}\ vertice);}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#pragma\ endregion}}
+
+\end{DoxyCode}

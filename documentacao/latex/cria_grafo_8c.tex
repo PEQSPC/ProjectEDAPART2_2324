@@ -1,0 +1,445 @@
+\doxysection{Referência ao ficheiro C\+:/\+EDA/\+EDA\+\_\+\+Fase2/\+Cria\+Grafo\+\_\+\+LIB/cria\+Grafo.c}
+\label{cria_grafo_8c}\index{C:/EDA/EDA\_Fase2/CriaGrafo\_LIB/criaGrafo.c@{C:/EDA/EDA\_Fase2/CriaGrafo\_LIB/criaGrafo.c}}
+{\ttfamily \#include "{}header.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ GR} $\ast$ \textbf{ create\+Graph} ()
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ create\+Vertice} (int cod, char $\ast$nome)
+\item 
+\textbf{ Adj} $\ast$ \textbf{ create\+Adj} (int cod, float weight)
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ Insere\+Vertice} (\textbf{ Vertice} $\ast$h, \textbf{ Vertice} $\ast$novo, bool $\ast$res)
+\item 
+bool \textbf{ add\+Adj} (\textbf{ Vertice} $\ast$vertice, \textbf{ Adj} $\ast$adj)
+\item 
+\textbf{ Adj} $\ast$ \textbf{ Insere\+Adj} (\textbf{ Adj} $\ast$h, \textbf{ Adj} $\ast$novo, bool $\ast$res)
+\item 
+bool \textbf{ remove\+Adj} (\textbf{ Vertice} $\ast$vertice, int cod)
+\item 
+bool \textbf{ remove\+Vertice} (\textbf{ GR} $\ast$graph, int cod)
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ Insere\+Adjacente\+Vertice\+Cod} (\textbf{ Vertice} $\ast$g, int cod\+Origem, int cod\+Dest, float peso, bool $\ast$res)
+\item 
+bool \textbf{ Existe\+Adjacentes} (\textbf{ Adj} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se determinado adj ja existe. Forma Recursiva. \end{DoxyCompactList}\item 
+\textbf{ Vertice} $\ast$ \textbf{ Destroy\+Graph} (\textbf{ Vertice} $\ast$g)
+\item 
+\textbf{ Adj} $\ast$ \textbf{ Destroy\+Adj} (\textbf{ Adj} $\ast$h)
+\item 
+void \textbf{ Mostra\+Adjacencias} (\textbf{ Adj} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Mostra lista de adjacentes. \end{DoxyCompactList}\item 
+void \textbf{ Mostra\+Grafo} (\textbf{ Vertice} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Apresenta grafo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Libraria \begin{DoxyAuthor}{Autor}
+Antonio Ferreira -\/ N� 9657 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+Maio 2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentação das funções}
+\label{cria_grafo_8c_a13f130d58972ab8baafdcab3fe4138db} 
+\index{criaGrafo.c@{criaGrafo.c}!addAdj@{addAdj}}
+\index{addAdj@{addAdj}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{addAdj()}
+{\footnotesize\ttfamily bool add\+Adj (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{vertice,  }\item[{\textbf{ Adj} $\ast$}]{adj }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ adj-\/>next\ =\ vertice-\/>adjacentes;}
+\DoxyCodeLine{00063\ \ \ \ \ vertice-\/>adjacentes\ =\ adj;}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a8605a8ff4dc967ee1df5ec66de98bacc} 
+\index{criaGrafo.c@{criaGrafo.c}!createAdj@{createAdj}}
+\index{createAdj@{createAdj}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{createAdj()}
+{\footnotesize\ttfamily \textbf{ Adj} $\ast$ create\+Adj (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{float}]{weight }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ Adj*\ novo\ =\ (Adj*)malloc(\textcolor{keyword}{sizeof}(Adj));}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (novo\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00041\ \ \ \ \ novo-\/>cod\ =\ cod;}
+\DoxyCodeLine{00042\ \ \ \ \ novo-\/>dist\ =\ weight;}
+\DoxyCodeLine{00043\ \ \ \ \ novo-\/>next\ =\ NULL;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a392a7087956e20780264e792da5c9229} 
+\index{criaGrafo.c@{criaGrafo.c}!createGraph@{createGraph}}
+\index{createGraph@{createGraph}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{createGraph()}
+{\footnotesize\ttfamily \textbf{ GR} $\ast$ create\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ GR*\ graph\ =\ (GR*)malloc(\textcolor{keyword}{sizeof}(GR));}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (graph\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00022\ \ \ \ \ graph-\/>vertices\ =\ NULL;}
+\DoxyCodeLine{00023\ \ \ \ \ graph-\/>numVertices\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{return}\ graph;}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a2fecd7c9a9c841e78f652653bb92f8c8} 
+\index{criaGrafo.c@{criaGrafo.c}!createVertice@{createVertice}}
+\index{createVertice@{createVertice}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{createVertice()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ create\+Vertice (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ Vertice*\ novo\ =\ (Vertice*)malloc(\textcolor{keyword}{sizeof}(Vertice));}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (novo\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00030\ \ \ \ \ novo-\/>cod\ =\ cod;}
+\DoxyCodeLine{00031\ \ \ \ \ strcpy(novo-\/>nome,\ nome);}
+\DoxyCodeLine{00032\ \ \ \ \ novo-\/>visitado\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ \ \ \ \ novo-\/>next\ =\ NULL;}
+\DoxyCodeLine{00034\ \ \ \ \ novo-\/>adjacentes\ =\ NULL;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_abf4b85948fa983ee4d5474e2d2715422} 
+\index{criaGrafo.c@{criaGrafo.c}!DestroyAdj@{DestroyAdj}}
+\index{DestroyAdj@{DestroyAdj}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{DestroyAdj()}
+{\footnotesize\ttfamily \textbf{ Adj} $\ast$ Destroy\+Adj (\begin{DoxyParamCaption}\item[{\textbf{ Adj} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em h} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00218\ \ \ \ \ Adj*\ aux\ =\ NULL;}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{while}\ (h)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (h-\/>next\ !=\ NULL)}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ aux\ =\ h-\/>next;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ free(h);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ h\ =\ aux;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ aux\ =\ NULL;}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00227\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a39e6c105a025bc8041397e52642c2612} 
+\index{criaGrafo.c@{criaGrafo.c}!DestroyGraph@{DestroyGraph}}
+\index{DestroyGraph@{DestroyGraph}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{DestroyGraph()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Destroy\+Graph (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{if}\ (g\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00196\ \ \ \ \ Vertice*\ aux\ =\ NULL;}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{while}\ (g)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (g-\/>next)}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ aux\ =\ g-\/>next;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ g-\/>adjacentes\ =\ DestroyAdj(g-\/>adjacentes);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ free(g);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ g\ =\ aux;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ aux\ =\ NULL;}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00206\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_abfb573390a37d6f33b48bc94df3d9cba} 
+\index{criaGrafo.c@{criaGrafo.c}!ExisteAdjacentes@{ExisteAdjacentes}}
+\index{ExisteAdjacentes@{ExisteAdjacentes}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{ExisteAdjacentes()}
+{\footnotesize\ttfamily bool Existe\+Adjacentes (\begin{DoxyParamCaption}\item[{\textbf{ Adj} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se determinado adj ja existe. Forma Recursiva. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em h} & Lista de Adjacencias \\
+\hline
+{\em cod} & Codigo a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro ou Falso 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ NULL)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{if}\ (h-\/>cod\ ==\ cod)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{return}\ ExisteAdjacentes(h-\/>next,\ cod);}
+\DoxyCodeLine{00184\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a40fb616df0d15d5c7bd748829b0199fa} 
+\index{criaGrafo.c@{criaGrafo.c}!InsereAdj@{InsereAdj}}
+\index{InsereAdj@{InsereAdj}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{InsereAdj()}
+{\footnotesize\ttfamily \textbf{ Adj} $\ast$ Insere\+Adj (\begin{DoxyParamCaption}\item[{\textbf{ Adj} $\ast$}]{h,  }\item[{\textbf{ Adj} $\ast$}]{novo,  }\item[{bool $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ *res\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \textcolor{comment}{//por\ defeito\ e\ falso}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (novo\ ==\ NULL)\ \ \ \textcolor{comment}{//Se\ novo\ adjacente\ e\ nulo,\ ignora\ operacao}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (ExisteAdjacentes(h,\ novo-\/>cod)\ ==\ \textcolor{keyword}{true})\ \textcolor{keywordflow}{return}\ h;\ \textcolor{comment}{//\ Se\ novo\ adj\ existe,\ ignorar\ operacao}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Inserir\ nova\ adjacencia!}}
+\DoxyCodeLine{00076\ \ \ \ \ *res\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ NULL)\ \{\ \ \ \ \textcolor{comment}{//Se\ lista\ de\ adjacencias\ e\ vazia,\ esta\ e\ a\ primeira\ adjacencia}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ h\ =\ novo;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//senao\ insere\ no\ inicio\ das\ adjacencias!\ }}
+\DoxyCodeLine{00082\ \ \ \ \ novo-\/>next\ =\ h;}
+\DoxyCodeLine{00083\ \ \ \ \ h\ =\ novo;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_ae12fd300bf592ed8faf9a196557f69c6} 
+\index{criaGrafo.c@{criaGrafo.c}!InsereAdjacenteVerticeCod@{InsereAdjacenteVerticeCod}}
+\index{InsereAdjacenteVerticeCod@{InsereAdjacenteVerticeCod}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{InsereAdjacenteVerticeCod()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Insere\+Adjacente\+Vertice\+Cod (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g,  }\item[{int}]{cod\+Origem,  }\item[{int}]{cod\+Dest,  }\item[{float}]{peso,  }\item[{bool $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#pragma\ region\ Validacoes }}
+\DoxyCodeLine{00145\ \ \ \ \ *\ res\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//por\ defeito\ e\ falso}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{if}\ (g\ ==\ NULL)\ \textcolor{keywordflow}{return}\ g;\ \ \ \ \textcolor{comment}{//<!\ se\ grafo\ esta\ vazio,\ ignora\ operacao}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ Vertice*\ o\ =\ ProcuraVerticeCod(g,\ codOrigem);\ \ \ \textcolor{comment}{//<!\ procura\ vertice\ origem}}
+\DoxyCodeLine{00150\ \ \ \ \ Vertice*\ d\ =\ ProcuraVerticeCod(g,\ codDest);\ \textcolor{comment}{//<!\ procura\ vertice\ destino}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ NULL\ ||\ d\ ==\ NULL)\ \textcolor{keywordflow}{return}\ g;\ \ \ \ \ \ \ \textcolor{comment}{//<!\ Se\ nao\ encontrou\ vertice\ origem\ e\ destino,\ ignora\ operacao}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (ExisteAdjacentes(o-\/>adjacentes,\ codDest)\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ g;\ \textcolor{comment}{//Se\ ja\ foi\ registado\ esta\ adjacencia,\ ignorar\ a\ operacaoo}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//g=InsereAdjacenteVertice(g,\ o-\/>cidade,\ d-\/>cidade,\ peso,\ res);}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#pragma\ region\ Acoes }}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//Insere\ nova\ adjacencia\ no\ vertice\ "{}Origem"{}}}
+\DoxyCodeLine{00161\ \ \ \ \ Adj*\ novoAdj\ =\ createAdj(codDest,\ peso);}
+\DoxyCodeLine{00162\ \ \ \ \ o-\/>adjacentes\ =\ InsereAdj(o-\/>adjacentes,\ novoAdj,\ res);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{//Se\ for\ nao\ orientado}}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{comment}{//return\ (InsereAdjacenteVertice(g,\ dest,\ origem,\ peso,\ res));}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a7e2895ac63d7fdc48b8d2b3353135521} 
+\index{criaGrafo.c@{criaGrafo.c}!InsereVertice@{InsereVertice}}
+\index{InsereVertice@{InsereVertice}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{InsereVertice()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ Insere\+Vertice (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{h,  }\item[{\textbf{ Vertice} $\ast$}]{novo,  }\item[{bool $\ast$}]{res }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ NULL)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ *res\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ Vertice*\ current\ =\ h;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{while}\ (current-\/>next\ !=\ NULL)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ current-\/>next\ =\ novo;}
+\DoxyCodeLine{00057\ \ \ \ \ *res\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a48bf3eac39b63746c647c9ad515077fd} 
+\index{criaGrafo.c@{criaGrafo.c}!MostraAdjacencias@{MostraAdjacencias}}
+\index{MostraAdjacencias@{MostraAdjacencias}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{MostraAdjacencias()}
+{\footnotesize\ttfamily void Mostra\+Adjacencias (\begin{DoxyParamCaption}\item[{\textbf{ Adj} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Mostra lista de adjacentes. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em h} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ NULL)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00238\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)tAdj:\ \%d\ -\/\ (\%.1f)\(\backslash\)n"{}},\ h-\/>cod,\ h-\/>dist);}
+\DoxyCodeLine{00239\ \ \ \ \ MostraAdjacencias(h-\/>next);}
+\DoxyCodeLine{00240\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_a167543a96ceb172a43ece7e79625acd1} 
+\index{criaGrafo.c@{criaGrafo.c}!MostraGrafo@{MostraGrafo}}
+\index{MostraGrafo@{MostraGrafo}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{MostraGrafo()}
+{\footnotesize\ttfamily void Mostra\+Grafo (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Apresenta grafo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Autor}
+Antonio Ferreira 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{if}\ (g\ ==\ NULL)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00251\ \ \ \ \ printf(\textcolor{stringliteral}{"{}V:\ \%d\ -\/\ \%s\(\backslash\)n"{}},\ g-\/>cod,\ g-\/>nome);}
+\DoxyCodeLine{00252\ \ \ \ \ MostraAdjacencias(g-\/>adjacentes);}
+\DoxyCodeLine{00253\ \ \ \ \ MostraGrafo(g-\/>next);}
+\DoxyCodeLine{00254\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_ae3d9577a5a2b8c9978edb45947b830dd} 
+\index{criaGrafo.c@{criaGrafo.c}!removeAdj@{removeAdj}}
+\index{removeAdj@{removeAdj}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{removeAdj()}
+{\footnotesize\ttfamily bool remove\+Adj (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{vertice,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ Adj*\ current\ =\ vertice-\/>adjacentes;}
+\DoxyCodeLine{00090\ \ \ \ \ Adj*\ previous\ =\ NULL;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ NULL\ \&\&\ current-\/>cod\ !=\ cod)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ previous\ =\ current;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (current\ !=\ NULL)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (previous\ ==\ NULL)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ vertice-\/>adjacentes\ =\ current-\/>next;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ previous-\/>next\ =\ current-\/>next;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ free(current);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \}}
+
+\end{DoxyCode}
+\label{cria_grafo_8c_aa87042b6a31dea48104738ccdb7d928c} 
+\index{criaGrafo.c@{criaGrafo.c}!removeVertice@{removeVertice}}
+\index{removeVertice@{removeVertice}!criaGrafo.c@{criaGrafo.c}}
+\doxysubsubsection{removeVertice()}
+{\footnotesize\ttfamily bool remove\+Vertice (\begin{DoxyParamCaption}\item[{\textbf{ GR} $\ast$}]{graph,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ Vertice*\ current\ =\ graph-\/>vertices;}
+\DoxyCodeLine{00110\ \ \ \ \ Vertice*\ previous\ =\ NULL;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ NULL\ \&\&\ current-\/>cod\ !=\ cod)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ previous\ =\ current;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (current\ !=\ NULL)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (previous\ ==\ NULL)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ graph-\/>vertices\ =\ current-\/>next;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ previous-\/>next\ =\ current-\/>next;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ all\ adjacencies\ to\ this\ vertex}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Vertice*\ v\ =\ graph-\/>vertices;\ v\ !=\ NULL;\ v\ =\ v-\/>next)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ removeAdj(v,\ cod);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Free\ adjacencies\ of\ this\ vertex}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ Adj*\ adj\ =\ current-\/>adjacentes;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (adj\ !=\ NULL)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ Adj*\ temp\ =\ adj;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ adj\ =\ adj-\/>next;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ free(temp);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ free(current);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ graph-\/>numVertices-\/-\/;}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
